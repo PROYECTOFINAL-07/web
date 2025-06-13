@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito de Compras</title>
+</head>
+<body>
+  <h1>Carrito</h1>
+  <ul id="lista-carrito"></ul>
+  <p>Total:<span id="total">0</span></p>
+  <a href="productos_Hortofruticolas.html">Seguir comprando</a>
+
+  <script>
+  
+
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const lista = document.getElementById('lista-carrito');
+    const totalElem = document.getElementById('total');
+    let total = 0;
+
+    function actualizarCarrito() {
+      lista.innerHTML = '';
+      total = 0;
+      carrito.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `item.nombre -${item.precio} `;
+        const btn = document.createElement('button');
+        btn.textContent = "Eliminar";
+        btn.onclick = () => eliminarProducto(index);
+        li.appendChild(btn);
+        lista.appendChild(li);
+        total += item.precio;
+      });
+      totalElem.textContent = total;
+    }
+
+    function eliminarProducto(indice) {
+      carrito.splice(indice, 1);
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      actualizarCarrito();
+    }
+
+    actualizarCarrito();
+  </script>
+</body>
+</html>

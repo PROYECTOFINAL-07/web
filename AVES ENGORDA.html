@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Aves de Engorda</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      background:#50C878  ;
+      padding: 10px;
+    }
+    .slider {
+      width: 600px;
+      height: 260px;
+      margin: 10px auto;
+      overflow: hidden;
+      position: relative;
+    }
+    .slides {
+      display: flex;
+      width: 1800px; /* 3 im?genes x 600px */
+      animation: slide 20s infinite;
+    }
+    .slides img {
+      width: 600px;
+      height: 260px;
+      object-fit: cover;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-600px); }
+      66% { transform: translateX(-1200px); }
+      100% { transform: translateX(0); }
+    }
+    .seccion {
+      margin-bottom: 40px;
+    }
+    p {
+      width: 80%;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1><marquee behavior="scroll">Aves de Engorda</marquee></h1>
+  <h3>Informacion acerca del cultivo</h3>
+
+  <div class="seccion">
+    <p><strong>acondicionamiento del Area avicola:.</p>
+    <div class="slider">
+      <div class="slides">
+        <img src="img\38.jpg"alt="1">
+        <img src="img\Img24.jpg" alt="2">
+        <img src="img\52.jpg"alt="3">
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <p><strong>Instalaci�n de comederos, bebederos, luz electrica.</p>
+    <div class="slider">
+      <div class="slides">
+        <img src="img\Img18.jpg" alt="4">
+        <img src="img\39.jpg" alt="5">
+        <img src="img\57.jpg" alt="6">
+		<img src="img\38.jpg" alt="7">
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <p><strong>Adquisicion de aves y crianza y cuidados</p>
+    <div class="slider">
+      <div class="slides">
+        <img src="img\54.jpg" alt="7">
+        <img src="img\51.jpg" alt="8">
+        <img src="img\40.jpg" alt="9">
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <p><strong>Crecimiento y venta de aves de engorda</p>
+    <div class="slider">
+      <div class="slides">
+        <img src="img\49.jpg"alt="10">
+		<img src="img\Img7.jpg" alt="11">
+        <img src="img\58.jpg" alt="12">
+      </div>
+    </div>
+  </div>
+<body bgcolor="#2E8B57
+
+ 
+ 
+
+">
+</body>
+</html>

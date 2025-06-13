@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Productos</title>
+   <style>
+    .producto { border: 1px solid #ccc; padding: 10px; margin: 10px; }
+    #carrito-icono { position: fixed; top: 10px; right: 20px; }
+
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2ecc71;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .carrito {
+      background: white;
+      color: black;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+    }
+    .producto {
+      border: 1px solid #ccc;
+	     padding: 15px;
+      width: 200px;
+    }
+    button {
+      background: #2ecc71;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #27ae60;
+    }
+    .vaciar-btn {
+      background-color: #e74c3c;
+      margin-top: 10px;
+    }
+.Estilo3 {
+	background: white;
+	color: #0000FF;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: xx-large;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+   </style>
+
+
+</head>
+<body><header>
+    <h2 align="center">Productos en venta</h2>
+  </header>
+ <h1 align="center">Productos: </h1>
+	  <section class="productos">
+ <div class="producto">   
+    <h3>Tomates</h3>
+    <p>20</p>
+    <button onClick="agregarAlCarrito('Tomates', 20 )">Agregar al carrito</button>
+</div>
+<div class="producto">
+    <h3>Lechuga</h3>
+    <p>15</p>
+    <button onClick="agregarAlCarrito('Lechuga', 15)">Agregar al carrito</button>
+  </div>
+
+  <div id="carrito-icono">
+    <p align="center"><a href="CARRITO1.html" class="Estilo3">🛒 Ver Carrito </a>      </p>
+  </div>
+
+  <p class="productos">
+    <script>
+    function agregarAlCarrito(nombre, precio) {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push({ nombre, precio });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      alert(`${nombre} agregado al carrito`);
+    }
+  </script>
+  </p>
+</body>
+</html>
+
